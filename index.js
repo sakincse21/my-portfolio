@@ -15,7 +15,7 @@ const educationsArray=[
         title: 'Bachelor of Science',
         institute: 'Khulna University of Engineering & Technology',
         major: 'Computer Science and Engineering',
-        gpa: '3.47/4.0'
+        gpa: '3.49/4.0'
     },
 ]
 

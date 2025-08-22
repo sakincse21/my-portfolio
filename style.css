@@ -7,28 +7,34 @@ body {
   margin: 0;
   padding: 0;
   background-color: rgb(217, 217, 217);
-  min-width: 720px;
+  /* min-width: 720px; */
+  width: 100vw;
+  height: 100vh;
   scroll-behavior: smooth;
 }
 
-.container{
+.container {
 }
 /* header section */
 
-header{
+header {
   position: sticky;
+  min-width: 100vw;
   width: 100%;
+  height: 80px;
   top: 0;
   background-color: rgb(217, 217, 217);
   box-shadow: 2px 2px 12px gray;
   z-index: 50;
 }
 nav {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
 }
+
 .logo {
   padding: 15px;
 }
@@ -47,7 +53,6 @@ nav {
   color: black;
 }
 
-
 /* intro section */
 
 .main-container {
@@ -62,24 +67,26 @@ nav {
   animation: fadeIn 3s;
 }
 
-.my-details-container .name-head{
+.my-details-container .name-head {
   font-family: "Saira Stencil One";
   font-style: normal;
 }
 
-.typing{
+.typing {
   overflow: hidden;
   text-wrap: nowrap;
-  animation: 
-    typing 3.5s steps(40, end);
+  animation: typing 3.5s steps(40, end);
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0; }
-  to { width: var(--final-width, 100%); }
+  from {
+    width: 0;
+  }
+  to {
+    width: var(--final-width, 100%);
+  }
 }
-
 
 .resume-btn {
   border: 1px solid black;
@@ -94,41 +101,44 @@ nav {
   box-shadow: 2px 2px 4px gray;
 }
 
-.my-image-container > img{
+.my-image-container > img {
   filter: drop-shadow(2px 2px 4px gray);
   border-bottom: 18px solid black;
   border-radius: 10px;
 }
 
-
-
 /* skill section  */
-.skill-container{
+.skill-container {
   height: 100vh;
   display: none;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 2em;
+  padding: 60px;
   overflow: visible;
   transition: ease-in;
   animation: fadeIn 3s;
 }
 
 @keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
-.skill-container h2{
+.skill-container h2 {
   font-size: 30px;
 }
-.middle-line-skill{
-  height: 60vh;
+.middle-line-skill {
+  height: 80vh;
   width: 0px;
   border: 1px solid darkslategray;
 }
-.left-side-skill{
+.left-side-skill {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -138,12 +148,12 @@ nav {
   /* border: 2px solid blue; */
   /* width: 40%; */
 }
-.left-side-skill > div  > h2{
+.left-side-skill > div > h2 {
   /* border: 10px solid black ; */
   width: 260px;
   text-align: right;
 }
-.right-side-skill{
+.right-side-skill {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -153,100 +163,103 @@ nav {
   /* border: 2px solid blue; */
   /* width: 40%; */
 }
-.right-side-skill > div > h2{
+.right-side-skill > div > h2 {
   text-align: left;
   /* border-bottom: 10px solid black ; */
   width: 260px;
 }
-.each-skill-left{
+.each-skill-left {
   display: flex;
   flex-direction: column;
   align-items: end;
 }
-.each-skill-right{
+.each-skill-right {
   display: flex;
   flex-direction: column;
   align-items: start;
 }
-.skill-full{
+.skill-full {
   width: 100%;
   border: 3px solid black;
 }
-.skill-have{
+.skill-have {
   border: 3px solid red;
 }
-.nextjs{
+.nextjs {
   width: 80%;
   --final-width: 80%;
-  animation: 
-    typing 1.5s steps(50, end);
+  animation: typing 1.5s steps(40, end);
 }
-.nodejs{
+.nodejs {
   width: 70%;
   --final-width: 70%;
-  animation: 
-    typing 1.5s steps(40, end);
+  animation: typing 1.5s steps(40, end);
 }
-.tailwind{
-  width: 70%;
-  --final-width: 70%;
-  animation: 
-    typing 1.5s steps(40, end);
-}
-.html{
+.typescript {
   width: 90%;
   --final-width: 90%;
-  animation: 
-    typing 1.5s steps(40, end);
+  animation: typing 1.5s steps(40, end);
 }
-.javafx{
+.expressjs {
+  width: 80%;
+  --final-width: 80%;
+  animation: typing 1.5s steps(40, end);
+}
+.tailwind {
+  width: 70%;
+  --final-width: 70%;
+  animation: typing 1.5s steps(40, end);
+}
+.html {
+  width: 90%;
+  --final-width: 90%;
+  animation: typing 1.5s steps(40, end);
+}
+.javafx {
   width: 50%;
   --final-width: 50%;
-  animation: 
-    typing 1.5s steps(40, end);
+  animation: typing 1.5s steps(40, end);
 }
-.c{
+.c {
   width: 85%;
   --final-width: 85%;
-  animation: 
-    typing 1.5s steps(40, end);
+  animation: typing 1.5s steps(40, end);
 }
-.reactjs{
+.reactjs {
   width: 80%;
   --final-width: 80%;
-  animation: 
-    typing 1.5s steps(40, end);
+  animation: typing 1.5s steps(40, end);
 }
-.js{
+.js {
   width: 90%;
   --final-width: 90%;
-  animation: 
-    typing 1.5s steps(40, end);
+  animation: typing 1.5s steps(40, end);
 }
-.css{
+.css {
   width: 75%;
   --final-width: 75%;
-  animation: 
-    typing 1.5s steps(40, end);
+  animation: typing 1.5s steps(40, end);
 }
-.java{
+.java {
   width: 60%;
   --final-width: 60%;
-  animation: 
-    typing 1.5s steps(40, end);
+  animation: typing 1.5s steps(40, end);
 }
-.cpp{
+.cpp {
   width: 80%;
   --final-width: 80%;
-  animation: 
-    typing 1.5s steps(40, end);
+  animation: typing 1.5s steps(40, end);
 }
 
 /* photography section  */
 
-.photography-container{
+.photography-container {
   min-height: 100vh;
   display: none;
+  width: 90vw;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin: auto;
   /* display: flex;
   flex-direction: row;
   align-items: center;
@@ -255,7 +268,8 @@ nav {
   gap: 15px; */
 }
 
-.frame{
+
+.frame {
   border-radius: 8px;
   padding: 10px 10px 10px 10px;
   background-color: black;
@@ -265,17 +279,17 @@ nav {
   align-items: center;
 }
 
-.image-box img{
+.image-box img {
   max-width: 100%;
 }
-.image-text h5{
+.image-text h5 {
   color: white;
   width: 100%;
+  padding-top: 10px;
   text-align: center;
   font-size: 18px;
-  margin: auto auto ;
+  margin: auto;
 }
-
 
 .parent {
   display: grid;
@@ -284,14 +298,14 @@ nav {
   gap: 8px;
 }
 
-.parent>div{
+.parent > div {
   box-shadow: 4px 4px 12px gray;
 }
 
-.parent>div:hover{
+.parent > div:hover {
   box-shadow: 2px 2px 8px gray;
 }
-  
+
 .div1 {
   grid-row: span 4 / span 4;
 }
@@ -323,22 +337,21 @@ nav {
   grid-column-start: 4;
   grid-row-start: 5;
 }
-      
 
 /* education area */
 
-.education-container{
+.education-container {
   min-height: 100vh;
   width: 100%;
   display: none;
-  flex-direction: column-reverse;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 20px;
 }
 
-.eduCard{
+.eduCard {
   border: 2px solid black;
   border-radius: 8px;
   padding: 16px;
@@ -351,32 +364,203 @@ nav {
   box-shadow: 4px 4px 8px gray;
 }
 
-.eduCard:hover{
+.eduCard:hover {
   box-shadow: 2px 2px 12px gray;
 }
 
-.eduTitle{
+.eduTitle {
   font-weight: bold;
   display: flex;
   flex-direction: row;
   align-items: start;
 }
 
-.eduInstitute{
+.eduInstitute {
   display: flex;
   flex-direction: row;
   align-items: start;
 }
 
-.eduMajor{
-
+.eduMajor {
   display: flex;
   flex-direction: row;
   align-items: start;
 }
 
-.eduIcons{
+.eduIcons {
   width: 24px;
   height: 24px;
   margin: 6px;
+}
+
+/* contact section */
+
+#contact-container {
+  min-height: 100vh;
+  width: 100%;
+  display: none;
+  flex-direction: column-reverse;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.contact-form {
+  margin: 50px auto;
+  padding: 20px;
+  width: 400px;
+  background-color: rgb(217, 217, 217);
+  border-radius: 6px;
+}
+
+#contactForm input,
+#contactForm textarea,
+#contactForm button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.admin-login-btn {
+  width: 100%;
+  background-color: rgb(245, 206, 161);
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.admin-header {
+  background: #333;
+  color: white;
+  padding: 10px;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.admin-nav{
+  display:  flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.logout-btn {
+  margin: 0 10px 0 0;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  background: tomato;
+  border-radius: 5px;
+}
+
+.admin-main {
+  padding: 20px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th,
+.admin-table td {
+  border: 1px solid #000000;
+  padding: 8px;
+  text-align: left;
+}
+
+.admin-table th {
+  background: #000000;
+  color: white;
+}
+
+.messageAction {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.edit{
+  margin: 0 10px 0 0;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  background: rgb(9, 109, 39);
+  border-radius: 5px;
+}
+
+.delete{
+  margin: 0 10px 0 0;
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  background: tomato;
+  border-radius: 5px;
+}
+
+.login-body{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box {
+  width: 400px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #aaa;
+  border-radius: 6px;
+  background: #f9f9f9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginForm{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+}
+
+.login-box input,
+.login-box button {
+  width: 90%;
+  /* margin: 5px 0; */
+  padding: 6px;
+  border-radius: 8px;
+}
+
+.info-msg {
+  margin: 10px 0;
+  padding: 8px;
+  border-radius: 5px;
+  text-align: center;
+  background: #eaeaea;
+  font-weight: bold;
+}
+
+.nav-btn {
+  color: white;
+  text-decoration: none;
+  padding: 6px 12px;
+  margin-right: 8px;
+  background: #444;
+  border-radius: 5px;
+}
+
+.nav-btn:hover {
+  background: #666;
 }
