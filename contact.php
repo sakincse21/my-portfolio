@@ -6,13 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = htmlspecialchars(trim($_POST["email"]));
     $message = htmlspecialchars(trim($_POST["message"]));
 
-    $stmt = $conn->prepare("INSERT INTO messages (name, email, message) VALUES (?, ?, ?)");
-    $stmt->bind_param("sss", $name, $email, $message);
+    $query = $conn->prepare("INSERT INTO messages (name, email, message) VALUES (?, ?, ?)");
+    $query->bind_param("sss", $name, $email, $message);
 
-    if ($stmt->execute()) {
-        header("Location: index.php?success=1#contact-container");
+    if ($query->execute()) {
+        header("Location: index.php?success=1");
     } else {
-        echo "Error: " . $stmt->error;
+        echo "Error: " . $query->error;
     }
 }
 ?>

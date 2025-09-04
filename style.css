@@ -2,19 +2,24 @@
   font-family: "Iceland";
   font-style: normal;
   font-size: 24px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 body {
   margin: 0;
   padding: 0;
   background-color: rgb(217, 217, 217);
-  /* min-width: 720px; */
-  width: 100vw;
-  height: 100vh;
-  scroll-behavior: smooth;
+  width: 100%;
+  max-width: 100vw;
+  /* width: 100%; */
+  min-height: 100vh;
+  scroll-behavior: auto;
 }
 
-.container {
+body::-webkit-scrollbar {
+  display: none;
 }
+
 /* header section */
 
 header {
@@ -28,15 +33,21 @@ header {
   z-index: 50;
 }
 nav {
-  width: 100%;
+  min-width: 100% !important;
+  width: fit-content !important;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  overflow: visible;
 }
 
 .logo {
   padding: 15px;
+}
+.container::-webkit-scrollbar,
+*::-webkit-scrollbar {
+  display: none;
 }
 .links-ul {
   list-style: none;
@@ -58,18 +69,54 @@ nav {
 .main-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  flex-wrap: wrap-reverse;
+  gap: 10rem;
   height: 100vh;
+  width: 100vw;
   overflow: visible;
   transition: ease-in;
   animation: fadeIn 3s;
 }
 
+@media (max-width: 1080px) {
+  .main-container {
+    gap: 5rem;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  .my-details-container .name-head {
+    font-family: "Saira Stencil One";
+    font-style: normal;
+    font-size: 40px !important;
+  }
+  .my-image-container .name-head {
+    width: 260px;
+  }
+  .links-ul {
+    margin: 8px;
+  }
+  .eachlink a {
+    /* padding: 5px 15px; */
+    font-size: 16px !important;
+    text-decoration: none;
+    color: black;
+  }
+  .outerFrame {
+    margin: auto !important;
+  }
+  .education-container {
+    flex-direction: column-reverse !important;
+  }
+}
+
 .my-details-container .name-head {
   font-family: "Saira Stencil One";
   font-style: normal;
+  font-size: 56px !important;
 }
 
 .typing {
@@ -268,6 +315,15 @@ nav {
   gap: 15px; */
 }
 
+.outerFrame {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
 
 .frame {
   border-radius: 8px;
@@ -275,7 +331,7 @@ nav {
   background-color: black;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -285,7 +341,7 @@ nav {
 .image-text h5 {
   color: white;
   width: 100%;
-  padding-top: 10px;
+  /* padding-top: 10px; */
   text-align: center;
   font-size: 18px;
   margin: auto;
@@ -345,7 +401,6 @@ nav {
   width: 100%;
   display: none;
   flex-direction: row-reverse;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 20px;
@@ -393,6 +448,215 @@ nav {
   margin: 6px;
 }
 
+
+/* projects section */
+.projects-container {
+  height: auto;
+  /* min-height: 100vh; */
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  overflow: visible;
+  transition: ease-in;
+  animation: fadeIn 3s;
+}
+
+
+.projects-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.projectCard {
+  /* background-color: white; */
+  border-radius: 10px;
+  box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 350px;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projectThumbnail {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background-color: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.projectThumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.projectCard:hover .projectThumbnail img {
+  transform: scale(1.05);
+}
+
+.no-image {
+  color: #888;
+  font-size: 16px;
+  text-align: center;
+}
+
+.projectContent {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.projectTitle {
+  font-family: "Saira Stencil One", cursive;
+  font-size: 24px;
+  margin: 0;
+  color: #333;
+}
+
+.projectDescription {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+  flex: 1;
+}
+
+.projectTechnologies {
+  font-size: 14px;
+  color: #555;
+}
+
+.techList {
+  color: salmon;
+  font-weight: bold;
+}
+
+.projectLinks {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.projectLink {
+  padding: 8px 16px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.live-link {
+  background-color: salmon;
+  color: white;
+}
+
+.live-link:hover {
+  background-color: salmon;
+  transform: translateY(-2px);
+}
+
+.github-link {
+  background-color: #333;
+  color: white;
+}
+
+.github-link:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+/* Responsive design for projects */
+@media (max-width: 1080px) {
+  .projects-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .projectCard {
+    width: 90%;
+    max-width: 400px;
+  }
+  
+  .projects-container h2 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-container {
+    padding: 40px 15px;
+  }
+  
+  .projectCard {
+    width: 100%;
+    max-width: 350px;
+  }
+  
+  .projectTitle {
+    font-size: 20px;
+  }
+  
+  .projectDescription {
+    font-size: 14px;
+  }
+  
+  .projectLinks {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .projectLink {
+    justify-content: center;
+  }
+}
+
+.projectCard {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideUp 0.6s ease forwards;
+}
+
+.projectCard:nth-child(1) { animation-delay: 0.1s; }
+.projectCard:nth-child(2) { animation-delay: 0.2s; }
+.projectCard:nth-child(3) { animation-delay: 0.3s; }
+.projectCard:nth-child(4) { animation-delay: 0.4s; }
+.projectCard:nth-child(5) { animation-delay: 0.5s; }
+.projectCard:nth-child(6) { animation-delay: 0.6s; }
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
 /* contact section */
 
 #contact-container {
@@ -422,6 +686,8 @@ nav {
   border-radius: 8px;
 }
 
+/* admin section  */
+
 .admin-login-btn {
   width: 100%;
   background-color: rgb(245, 206, 161);
@@ -434,16 +700,24 @@ nav {
   background: #333;
   color: white;
   padding: 10px;
-  width: 100vw;
+  min-width: 100vw;
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
   gap: 10px;
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
-.admin-nav{
-  display:  flex;
+
+.admin-nav {
+  min-width: 100% !important;
+  width: fit-content !important;
+  display: flex;
   flex-direction: row;
   justify-content: end;
   align-items: center;
@@ -461,10 +735,17 @@ nav {
 
 .admin-main {
   padding: 20px;
+  min-width: 100%;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  margin: auto;
+  min-height: 100vw;
 }
 
 .admin-table {
-  width: 100%;
+  width: 90%;
+  margin: auto;
   border-collapse: collapse;
 }
 
@@ -482,13 +763,14 @@ nav {
 
 .messageAction {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 }
 
-.edit{
+.edit {
   margin: 0 10px 0 0;
   color: white;
   text-decoration: none;
@@ -497,7 +779,7 @@ nav {
   border-radius: 5px;
 }
 
-.delete{
+.delete {
   margin: 0 10px 0 0;
   color: white;
   text-decoration: none;
@@ -506,7 +788,7 @@ nav {
   border-radius: 5px;
 }
 
-.login-body{
+.login-body {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -528,10 +810,11 @@ nav {
   justify-content: center;
 }
 
-.loginForm{
+.loginForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: start;
+  gap: 5px;
   /* justify-content: center; */
 }
 
@@ -563,4 +846,59 @@ nav {
 
 .nav-btn:hover {
   background: #666;
+}
+
+.nav-right{
+  display: flex;
+  flex-direction: row;
+  padding-right: 20px;
+  gap: 5px;
+}
+
+.admin-section {
+  margin-bottom: 40px;
+  padding: 0px 40px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.project-form {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.project-form div {
+  margin-bottom: 20px;
+}
+
+.project-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.project-form input,
+.project-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.project-form textarea {
+  resize: vertical;
+}
+
+.error {
+  color: red;
+  background-color: #ffe6e6;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
 }

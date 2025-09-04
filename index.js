@@ -83,6 +83,25 @@ function projectClick(){
     document.querySelectorAll('.container').forEach(el => {
         el.style.display = 'none';
       });      
-    const mainDiv=document.getElementById('project-container');
+    const mainDiv=document.getElementById('projects-container');
     mainDiv.style.display='flex';
 }
+
+// Add projects section handling
+// document.querySelector('a[href="#projects"]').addEventListener('click', function(e) {
+//     e.preventDefault();
+//     hideAllSections();
+//     document.querySelector('.projects-container').style.display = 'flex';
+// });
+
+// function hideAllSections() {
+//     document.querySelectorAll('.container').forEach(el => {
+//         el.style.display = 'none';
+//       });      
+//     document.querySelector('.projects-container').style.display = 'none';
+// }
+
+// // Make sure to initially hide the projects section
+// document.addEventListener('DOMContentLoaded', function() {
+//     document.querySelector('.projects-container').style.display = 'none';
+// });
